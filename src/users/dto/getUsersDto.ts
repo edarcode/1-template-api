@@ -1,13 +1,8 @@
 import z from "zod";
-import { Next, Req, Res } from "../../types/types";
-import { ParamsToGetUsersService } from "../services/getUsersService";
+import { Next, Req, Res } from "../../types";
+import { ParamsToGetUsers } from "../services/getUsersService";
 
-export interface ReqWithParamsGetUsers extends Req {
-  paramsToGetUsers?: ParamsToGetUsersService;
-}
-type Reqq = ReqWithParamsGetUsers;
-
-export const getUsersDto = (req: Reqq, res: Res, next: Next) => {
+export const getUsersDto = (req: Requ, res: Res, next: Next) => {
   try {
     const paramsToGetUsers = schema.parse(req.query);
     req.paramsToGetUsers = paramsToGetUsers;
@@ -24,3 +19,8 @@ const schema = z
     name: z.string().min(1),
   })
   .partial();
+
+export interface ReqWithParamsGetUsers extends Req {
+  paramsToGetUsers?: ParamsToGetUsers;
+}
+type Requ = ReqWithParamsGetUsers;

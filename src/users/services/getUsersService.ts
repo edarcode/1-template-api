@@ -1,14 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { connDb } from "../../db/connDb";
 
-export type ParamsToGetUsersService = {
-  page?: number;
-  take?: number;
-  name?: string;
-};
-type Params = ParamsToGetUsersService;
-type Where = Prisma.UserWhereInput;
-
 export const getUsersService = async (params: Params = {}) => {
   const { page = 1, take = 10, name } = params;
 
@@ -28,3 +20,11 @@ export const getUsersService = async (params: Params = {}) => {
 
   return { page, totalPages, users };
 };
+
+export type ParamsToGetUsers = {
+  page?: number;
+  take?: number;
+  name?: string;
+};
+type Params = ParamsToGetUsers;
+type Where = Prisma.UserWhereInput;

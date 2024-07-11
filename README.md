@@ -33,13 +33,13 @@ por lo general hay datos por defecto utilizando postgreSQL, solo tendrías que c
 postgresql://postgres:PASSWORD@localhost:5432/DATABASE?schema=public
 ```
 
+## Scripts
+
+En el package.json ya existen scripts para resetear o llenar la db con data fake
+
 ## Rutas
 
 Si todo está correcto, debe visualizar un json en la sgts rutas
 
 - http://localhost:3000
 - http://localhost:3000/users
-
-## Scripts
-
-En el package.json ya existen scripts para resetear o llenar la db con data fake
